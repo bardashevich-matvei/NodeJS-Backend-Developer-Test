@@ -1,0 +1,40 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "NodeJS Backend Developer Test",
+  "scripts": {
+    "eslint": "eslint --fix --config=.eslintrc.json *.js",
+    "start": "npm run build && node dist/bin/www",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bardashevich-matvei/NodeJS-Backend-Developer-Test.git"
+  },
+  "author": "Matvei Bardashevich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bardashevich-matvei/NodeJS-Backend-Developer-Test/issues"
+  },
+  "homepage": "https://github.com/bardashevich-matvei/NodeJS-Backend-Developer-Test#readme",
+  "dependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.2",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "ejs": "^3.0.1",
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "jade": "^1.11.0",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "rimraf": "^3.0.2"
+  }
+}
