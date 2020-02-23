@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Main</title>
 </head>
+
 <body>
-    <h1>MAIN</h1>
+    <table id="main">
+        <caption id="caption"></caption>
+        <tbody id="tbody">
+            <tr>
+                <td>
+                    id
+                </td>
+                <td>
+                    userId
+                </td>
+                <td>
+                    title
+                </td>
+                <td>
+                    body
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        (async function () {
+            let data = await fetch('http://localhost:3000/api/', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+            })
+            data = await data.json();
+            const users = data.users;
+            const posts = data.posts;
+            document.getElementById('caption').innerHTML = 'Welcome to the NodeJS Backend Developer Test App';
+            const table = document.getElementById('table');
+            console.log(posts[0]);
+            console.log(users[0]);
+            posts.forEach(item => {
+                let post = document.createElement('tr');
+                let userId = document.createElement('td');
+                const user = users.find(x => x.id === item.userid);
+                console.log(user);
+                userId.innerHTML = user._id;
+                let id = document.createElement('td');
+                id.innerHTML = item.id;
+                let title = document.createElement('td');
+                title.innerHTML = item.title;
+                let body = document.createElement('td');
+                body.innerHTML = item.body;
+                post.append(id);
+                post.append(userId);
+                post.append(title);
+                post.append(body);
+                document.getElementById('tbody').append(post);
+            });
+        }());</script>
 </body>
+
 </html>

@@ -1,13 +1,18 @@
 const index = require('../index');
 const debug = require('debug')('sampleindex:server');
 const http = require('http');
+const mongoose = require('mongoose');
 const port = normalizePort(process.env.PORT || '3000');
 index.set('port', port);
 
 const server = http.createServer(index);
 
-server.listen(port, function () {
-	console.log('start on 3000');
+mongoose.connect('mongodb://localhost:27017/main', { useNewUrlParser: true }, function(err){
+	if (err) return console.log(err);
+	console.log('mongo started');
+	server.listen(port, function () {
+		console.log('server started on 3000');
+	});
 });
 server.on('error', onError);
 server.on('listening', onListening);

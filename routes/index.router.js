@@ -5,6 +5,6 @@ import data from './data.router';
 const router = express.Router();
 
 router.use('/', views);
-router.use('api/', data);
+router.use('/api/', data);
 
 export default router;

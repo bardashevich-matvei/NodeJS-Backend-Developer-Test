@@ -1,9 +1,9 @@
-import express from 'express';
+import { Router } from 'express';
+import viewsController from '../controllers/views.controller';
+const router = Router();
 
-const router = express.Router();
-
-router.get('/', (req, res) => {
-	res.render('main');
+router.get('/', async (req, res) => {
+	await viewsController.main(req, res);
 });
 
 export default router;
