@@ -1,5 +1,13 @@
 # NodeJS-Backend-Developer-Test
 
+## Table of Contents
+
+* [Description](#description)
+* [Installation](#installation)
+* [Running the App](#running-the-app)
+
+## Description
+
 NodeJS Backend Developer Test
  
 Show that you understand NodeJS, webservices and data sources.
@@ -13,3 +21,15 @@ We are going to use the test API server: https://jsonplaceholder.typicode.com as
 •	Using ExpressJS retrieve the “posts” data from your database and present it on a page in a simple html table
 
 •	Join users together with the posts, using the User endpoint at: https://jsonplaceholder.typicode.com/users Each Post has a userId that will match a user.
+
+## Installation
+
+```bash
+$ npm i
+```
+
+## Running the App
+
+```bash
+$ npm start
+```

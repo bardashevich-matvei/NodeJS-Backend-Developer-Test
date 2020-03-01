@@ -28,11 +28,11 @@ class DataService {
 	}
     
 	async addPosts(posts) {
-		// return Promise.all([posts.forEach(async item => await new Post(item).save())]);
+		await Promise.all([await Post.deleteMany(), posts.forEach(async item => await new Post(item).save())]);
 	}
     
 	async addUsers(users) {
-		// return Promise.all([users.forEach(async item => await new User(item).save())]);
+		await Promise.all([await User.deleteMany(), users.forEach(async item => await new User(item).save())]);
 	}
 
 	async getData() {

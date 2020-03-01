@@ -5,7 +5,7 @@
   "scripts": {
     "eslint": "eslint --fix --config=.eslintrc.json *.js",
     "start": "npm run build && node dist/bin/www",
-    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,./public --copy-files && cpx \"public/**/*.{css,js}\" dist/public"
   },
   "repository": {
     "type": "git",
@@ -43,6 +43,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.0.16",
     "babel-preset-env": "^1.7.0",
+    "cpx": "^1.5.0",
     "rimraf": "^3.0.2"
   }
 }
