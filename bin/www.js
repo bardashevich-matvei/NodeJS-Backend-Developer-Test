@@ -11,7 +11,7 @@ mongoose.connect('mongodb://localhost:27017/main', { useNewUrlParser: true }, fu
 	if (err) return console.log(err);
 	console.log('mongo started');
 	server.listen(port, function () {
-		console.log('server started on 3000');
+		console.log('server started on http://localhost:3000/');
 	});
 });
 server.on('error', onError);
